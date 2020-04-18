@@ -1,13 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>myfirst</title>
-    <url>/2020/04/17/myfirst/</url>
-    <content><![CDATA[<p>的额外</p>
-<p>fewfwefwfwefwfw1</p>
-]]></content>
-  </entry>
-  <entry>
     <title>第一节 材质的存放</title>
     <url>/2020/04/17/hello-world/</url>
     <content><![CDATA[<h1 id="欢迎来到我的Mup插件的教程（概述）"><a href="#欢迎来到我的Mup插件的教程（概述）" class="headerlink" title="欢迎来到我的Mup插件的教程（概述）"></a>欢迎来到我的Mup插件的教程（概述）</h1><a id="more"></a>
@@ -25,6 +18,13 @@
 <h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
 
 <p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>myfirst</title>
+    <url>/2020/04/17/myfirst/</url>
+    <content><![CDATA[<p>的额外</p>
+<p>fewfwefwfwefwfw1</p>
 ]]></content>
   </entry>
   <entry>
