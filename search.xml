@@ -19,13 +19,20 @@
 
 <p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
 ]]></content>
+      <categories>
+        <category>测试</category>
+      </categories>
   </entry>
   <entry>
     <title>myfirst</title>
     <url>/2020/04/17/myfirst/</url>
-    <content><![CDATA[<p>的额外</p>
-<p>fewfwefwfwefwfw1</p>
+    <content><![CDATA[<p>的额外<br><a href="images/index.txt" target="_blank">附件1</a><br>fewfwefwfwefwfw1</p>
 ]]></content>
+  </entry>
+  <entry>
+    <title>test</title>
+    <url>/2020/04/18/test/</url>
+    <content><![CDATA[]]></content>
   </entry>
   <entry>
     <title>two</title>
