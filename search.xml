@@ -3,7 +3,7 @@
   <entry>
     <title>开发你的第一个界面插件</title>
     <url>/2020/04/18/%E5%BC%80%E5%8F%91%E4%BD%A0%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AA%E7%95%8C%E9%9D%A2%E6%8F%92%E4%BB%B6/</url>
-    <content><![CDATA[<p>开始介绍，让你了解如何在服务端，制作ui插件</p>
+    <content><![CDATA[<p>让你了解如何在服务端，制作客户端ui</p>
 <a id="more"></a>
 <h1 id="开发你到第一个界面程序"><a href="#开发你到第一个界面程序" class="headerlink" title="开发你到第一个界面程序"></a>开发你到第一个界面程序</h1><h2 id="导入依赖"><a href="#导入依赖" class="headerlink" title="导入依赖"></a>导入依赖</h2><p>将MuP插件导入到你到插件依赖中</p>
 <h2 id="hookMup插件"><a href="#hookMup插件" class="headerlink" title="hookMup插件"></a>hookMup插件</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onEnable</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(Bukkit.getPluginManager().getPlugin(<span class="string">"mup"</span>)!=<span class="keyword">null</span>)&#123;</span><br><span class="line">        getLogger().info(<span class="string">"成功hook Mup插件"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
