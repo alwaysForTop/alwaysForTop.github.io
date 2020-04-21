@@ -1,6 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>第一节 材质的存放</title>
+    <url>/2020/04/18/%E7%AC%AC%E4%B8%80%E8%8A%82%E6%9D%90%E8%B4%A8%E7%AF%87/</url>
+    <content><![CDATA[<p> 欢迎来到我的Mup插件的教程<br> 此节内容将教会你 如何将你的材质载入mup mod<br> mup 可以让开发者在服务端控制客户端的ui界面的生成和改变，方便开发者的使用，和ui的新的进步</p>
+<a id="more"></a>
+
+<h1 id="材质篇"><a href="#材质篇" class="headerlink" title="材质篇"></a>材质篇</h1><p>第一次运行mod的时候会在客户端的.mincraft资源文件夹文件夹resourcepacks下生成一个mup文件夹，你如果不想运行mod，可以自己新建在.mincraft/resourcepacks新建一个文件夹mup</p>
+<h2 id="图片材质"><a href="#图片材质" class="headerlink" title="图片材质"></a>图片材质</h2><p>你可以在mup文件夹下建任意的文件夹，里面放上png，jpg格式的图片，他都是可以识别到的<img src="/images/texture.png" alt="客户端图片存放路径"><br>服务调用时写法<br><code>[png]exmple</code><br><code>[jpg]exmple</code></p>
+<h2 id="gif材质"><a href="#gif材质" class="headerlink" title="gif材质"></a>gif材质</h2><p>gif材质存放的为止同上，和图片材质没有区别<br>服务端的调用时写法<br><code>[gif]exmple</code></p>
+<h2 id="obj模型"><a href="#obj模型" class="headerlink" title="obj模型"></a>obj模型</h2><h3 id="obj模型的放置"><a href="#obj模型的放置" class="headerlink" title="obj模型的放置"></a>obj模型的放置</h3><p>当你要加载自己的obj模型的时候 首先要把obj模型的<br>obj结尾的文件和mtl结尾的文件放在同一目录下<br>如下图所示<br><img src="/images/obj.png" alt="obj模型"></p>
+<h3 id="obj模型文件的配置"><a href="#obj模型文件的配置" class="headerlink" title="obj模型文件的配置"></a>obj模型文件的配置</h3><p>用文本格式打开obj文件,以上图所示<br>打开buff2.obj文件<br>找到下面这行文字<br><code>mtllib ./buff2.mtl</code><br>不管它的路径是什么，请按你的实际mtl文件名改成下图所示<br>在此处我按照buff2.mtl的名字改成下图所示<br><code>mtllib buff2.mtl</code></p>
+<h3 id="mtl文件的配置"><a href="#mtl文件的配置" class="headerlink" title="mtl文件的配置"></a>mtl文件的配置</h3><p>以文本方式 打开 mtl 文件<br>在这里 我打开buff2.mtl<br><code>map_Kd file:model/buff2_3.png</code>将此行代码贴文本到最底部<br>这个是为了让mc能读到材质信息，所提供的路径。</p>
+<p>规则是 以mup为根目录，如果你的材质在mup文件夹下，直接写<br><code>map_Kd file:exmple.png</code><br>如果你的材质在你自己建的文件夹下 请写出相对路径路径<br><img src="/images/objpng.png" alt="obj模型材质"><br>如上图标示出来的路径，我将如下文字贴到mtl文件最底行<br><code>map_Kd file:model/buff2_3.png</code></p>
+]]></content>
+      <categories>
+        <category>Mup插件教学</category>
+      </categories>
+  </entry>
+  <entry>
     <title>第三节 进阶组件</title>
     <url>/2020/04/21/%E7%AC%AC%E4%B8%89%E8%8A%82-%E8%BF%9B%E9%98%B6%E7%BB%84%E4%BB%B6/</url>
     <content><![CDATA[<p>本篇介绍了组件的进阶用法</p>
@@ -15,24 +33,6 @@
 
 <h2 id="继承写法"><a href="#继承写法" class="headerlink" title="继承写法"></a>继承写法</h2><p>写一个你自己的类，然后继承mu提供的组件，如果改组件提供了按压 点击 松开等方法接口的，复写即可，如下</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyButton</span> <span class="keyword">extends</span> <span class="title">MuButtonSv</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">MyButton</span><span class="params">(String id)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>(id);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">(Player player)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//你需要做的事情</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onPresssed</span><span class="params">(Player player)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//你需要做的事情</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onReleased</span><span class="params">(Player player)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//你需要做的事情</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>Mup插件教学</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>第一节 材质的存放</title>
-    <url>/2020/04/18/%E7%AC%AC%E4%B8%80%E8%8A%82%E6%9D%90%E8%B4%A8%E7%AF%87/</url>
-    <content><![CDATA[<p> 欢迎来到我的Mup插件的教程<br> 此节内容将教会你 如何将你的材质载入mup mod<br> mup 可以让开发者在服务端控制客户端的ui界面的生成和改变，方便开发者的使用，和ui的新的进步</p>
-<a id="more"></a>
-
-<h1 id="材质篇"><a href="#材质篇" class="headerlink" title="材质篇"></a>材质篇</h1><p>第一次运行mod的时候会在客户端的.mincraft资源文件夹文件夹resourcepacks下生成一个mup文件夹，你如果不想运行mod，可以自己新建在.mincraft/resourcepacks新建一个文件夹mup</p>
-<h2 id="图片材质"><a href="#图片材质" class="headerlink" title="图片材质"></a>图片材质</h2><p>你可以在mup文件夹下建任意的文件夹，里面放上png，jpg格式的图片，他都是可以识别到的<img src="/images/texture.png" alt="客户端图片存放路径"><br>服务调用时写法<br><code>[png]exmple</code><br><code>[jpg]exmple</code></p>
-<h2 id="gif材质"><a href="#gif材质" class="headerlink" title="gif材质"></a>gif材质</h2><p>gif材质存放的为止同上，和图片材质没有区别<br>服务端的调用时写法<br><code>[gif]exmple</code></p>
-<h2 id="obj模型"><a href="#obj模型" class="headerlink" title="obj模型"></a>obj模型</h2><h3 id="obj模型的放置"><a href="#obj模型的放置" class="headerlink" title="obj模型的放置"></a>obj模型的放置</h3><p>当你要加载自己的obj模型的时候 首先要把obj模型的<br>obj结尾的文件和mtl结尾的文件放在同一目录下<br>如下图所示<br><img src="/images/obj.png" alt="obj模型"></p>
-<h3 id="obj模型文件的配置"><a href="#obj模型文件的配置" class="headerlink" title="obj模型文件的配置"></a>obj模型文件的配置</h3><p>用文本格式打开obj文件,以上图所示<br>打开buff2.obj文件<br>找到下面这行文字<br><code>mtllib ./buff2.mtl</code><br>不管它的路径是什么，请按你的实际mtl文件名改成下图所示<br>在此处我按照buff2.mtl的名字改成下图所示<br><code>mtllib buff2.mtl</code></p>
-<h3 id="mtl文件的配置"><a href="#mtl文件的配置" class="headerlink" title="mtl文件的配置"></a>mtl文件的配置</h3><p>以文本方式 打开 mtl 文件<br>在这里 我打开buff2.mtl<br><code>map_Kd file:model/buff2_3.png</code>将此行代码贴文本到最底部<br>这个是为了让mc能读到材质信息，所提供的路径。</p>
-<p>规则是 以mup为根目录，如果你的材质在mup文件夹下，直接写<br><code>map_Kd file:exmple.png</code><br>如果你的材质在你自己建的文件夹下 请写出相对路径路径<br><img src="/images/objpng.png" alt="obj模型材质"><br>如上图标示出来的路径，我将如下文字贴到mtl文件最底行<br><code>map_Kd file:model/buff2_3.png</code></p>
-]]></content>
       <categories>
         <category>Mup插件教学</category>
       </categories>
